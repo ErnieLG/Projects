@@ -1,4 +1,4 @@
-<img src="https://www.picpedia.org/highway-signs/images/loan.jpg" height="200">
+<img src="https://www.picpedia.org/highway-signs/images/loan.jpg" height="300">
 
 # Loan Outcome Classifier
 
@@ -12,6 +12,7 @@
 I'm using data provided by NathanGeorge on 1.3M observations of Lending Club (https://www.lendingclub.com/) accepted and declined loan requests from the beginning of 2007 to the end of 2018 with 151 features.  (https://www.kaggle.com/wordsforthewise/lending-club)  
 
 Lending Club utilizes a loan risk rating system from A to G, with A having the greatest chance of being paid back in full and also having the lowest interest rate:
+
 ![Image of Grades](https://www.moneycrashers.com/wp-content/uploads/2015/04/reward-risk.png)
 
 
