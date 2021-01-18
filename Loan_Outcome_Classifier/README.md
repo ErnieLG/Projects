@@ -1,4 +1,5 @@
-<img src="https://www.picpedia.org/highway-signs/images/loan.jpg" height="100">
+<img src="https://www.picpedia.org/highway-signs/images/loan.jpg" height="200">
+
 # Loan Outcome Classifier
 
 *Loans are one of the most crucial aspects of the American economy, but they come with the potential pitfall of loan recipients being unable to pay off these loans resulting in a loss in profit from the stance of the lender.  In order to minimize this risk and maximize their ROI, lending institutions in the past have approved loans and assigned risk grades (with corresponding interest rates and term lengths) based on a multitude of factors such as credit score, income, race, and value of collateral.  I aim to use modern techniques of data science and machine learning to create a model of classification that would streamline this process and improve upon extant loan grading systems.*
