@@ -23,8 +23,10 @@ Lending Club utilizes a loan risk rating system from A to G, with A having the g
 * **Problem 1:** This dataset contains completely different features depending on whether the loan applicants were an individual person or multiple people.  
  **Solution:** These are essentially two datasets with data that can't be compared to each other, therefore we'll focus only on individual applicants.
 
+* **Problem 1:** This dataset contains completely different features depending on whether the loan applicants were an individual person or multiple people.  
+ **Solution:** These are essentially two datasets with data that can't be compared to each other, therefore we'll focus only on individual applicants.
+ 
 * **Problem 2:** There are null values for features that describe the number of times an event happened (such as "Number of credit inquiries in past 12 months") or amount of time since a specific event occurred (such as "Months since most recent 90-day or worse rating").
-
  **Solution:** I interpretted these omissions as evidence of non-occurrence, since they were uncommon events; I filled these with 0 (for number of occurences) or the max value (for amount of time since last occurence).
 
 * **Problem 3:** There were many features that were highly correlated or nearly identical, as well as many categorical features.  
@@ -39,15 +41,18 @@ Lending Club utilizes a loan risk rating system from A to G, with A having the g
 ![](./6._Readme/outcome_by_grade.png)
 ![](./6._Readme/outcome_by_grade_table.png)
 
-* There were a few strong correlations between features, but they were mostly expected:
+* There were a few strong correlations between features that were mostly expected:
 
-First Header | Second Header | third
+First Feature | Second Feature | Correlation
 ------------ | ------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+upper boundary of borrower’s FICO score | lower boundary of borrower’s FICO score | 1.000
+number of open credit lines  | number of satisfactory accounts | .999
+amount of loan  | amount of monthly payments | .954
+months since oldest revolving account opened  | years between opening of first line of credit and loan issuance | .918
+number of revolving accounts  | number of bankcard accounts | .838
 
-* Add some graphs of scatterplots color-coded by letter-grade.
-![](./6._Readme/xxx)
+* Being full paid off is most correlated with an A or B grade and FICO score, while an A grade is most correlated with FICO score and a high credit limit:
+![](./6._Readme/fully_paid_corr.png)![](./6._Readme/grade_A_corr.png)
 
 ## 4. Machine Learning & Modeling
 
