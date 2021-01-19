@@ -7,7 +7,7 @@
 
 ## 1. Data
 
-[Data Import Report](https://github.com/ErnieLG/Projects/blob/main/Loan_Outcome_Classifier/1.%20Import_Data/Import_Data.ipynb)
+[Data Import Report](./1.%20Import_Data/Import_Data.ipynb)
 
 I'm using data provided by NathanGeorge on 1.3M observations of Lending Club (https://www.lendingclub.com/) accepted and declined loan requests from the beginning of 2007 to the end of 2018 with 151 features.  (https://www.kaggle.com/wordsforthewise/lending-club)  
 
@@ -18,7 +18,7 @@ Lending Club utilizes a loan risk rating system from A to G, with A having the g
 
 ## 2. Data Cleaning 
 
-[Data Cleaning Report](https://github.com/ErnieLG/Projects/blob/main/Loan_Outcome_Classifier/2.%20Data_Cleaning/Data_Cleaning.ipynb)
+[Data Cleaning Report](./2.%20Data_Cleaning/Data_Cleaning.ipynb)
 
 * **Problem 1:** This dataset contains completely different features depending on whether the loan applicants were an individual person or multiple people.  **Solution:** These are essentially two datasets with data that can't be compared to each other, therefore we'll focus only on individual applicants.
 
@@ -29,22 +29,30 @@ Lending Club utilizes a loan risk rating system from A to G, with A having the g
 
 ## 3. EDA
 
-[EDA Report](https://github.com/ErnieLG/Projects/blob/main/Loan_Outcome_Classifier/3.%20EDA/EDA.ipynb)
+[EDA Report](./3.%20EDA/EDA.ipynb)
 
-* Interestingly, I was unable to find any strong correlation between individual features and the loan grades utilized by LendingClub.  
+* LendingClub's grades aligned well with the charged off rates:
+![](./6._Readme/outcome_by_grade.png)
+![](./6._Readme/outcome_by_grade_table.png)
+
+* There were a few strong correlations between features, but they were mostly expected:
+First Header | Second Header | Third Header
+------------ | ------------- | ------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
 
 * Add some graphs of scatterplots color-coded by letter-grade.
-![](./6_README_files/star_counts.png)
+![](./6._Readme/xxx)
 
 ## 4. Machine Learning & Modeling
 
-[ML Report](https://github.com/ErnieLG/Projects/blob/main/Loan_Outcome_Classifier/4.%20Modeling/Modeling.ipynb)
+[ML Report](./4.%20Modeling/Modeling.ipynb)
 
-The most important metric to maximize is the true positive rate; it's uncommon for loans to be charged-off, but they represent a loss in profit, and we want to limit them as much as possible.  After attempting several models such as KNN, Random Forest, and Gradient Boosting, I was not getting TPRs much better than chance.  This led to me applying Bayesian Boosting to Light GBM, optimizing the hyperparameters in order to maximize the AUROC.  Initial iterations had results >71% with the 3rd iteration reaching 72.38%.  
+The most important metric to maximize is the true positive rate; it's uncommon for loans to be charged-off, but they represent a loss in profit, and we want to limit them as much as possible.  After attempting several models such as KNN, Random Forest, and Gradient Boosting, I was not getting TPRs much better than chance.  This led to me applying Bayesian Boosting to Light GBM, optimizing the hyperparameters in order to maximize the AUROC.  Comparing the various methods of LightGBM, xxx had the best preliminary results.  I performed it for 5 total iterations with CV = 5.  
 
 ![](./6_README_files/algo.png)
 
-Adjusting the threshold to .46 allowed us to reach TPR = 75%.
+Adjusting the threshold to .40 allowed us to reach TPR = xx%.
 
 ![](./6_README_files/forumla.png)
 
