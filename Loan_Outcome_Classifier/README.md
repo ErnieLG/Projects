@@ -23,8 +23,8 @@ Lending Club utilizes a loan risk rating system from A to G, with A having the g
 * **Problem 1:** This dataset contains completely different features depending on whether the loan applicants were an individual person or multiple people.  
 -**Solution:** These are essentially two datasets with data that can't be compared to each other, therefore we'll focus only on individual applicants.
 
-* **Problem 2:** There are null values for features that describe the number of times an event happened (such as "Number of credit inquiries in past 12 months") or amount of time since a specific event occurred (such as "Months since most recent 90-day or worse rating").
--**Solution:** I interpretted these omissions as evidence of non-occurrence, since they were uncommon events; I filled these with 0 (for number of occurences) or the max value (for amount of time since last occurence).
+* **Problem 2:** There are null values for features that describe the number of times an event happened (such as "Number of credit inquiries in past 12 months") or amount of time since a specific event occurred (such as "Months since most recent 90-day or worse rating").  
+ -**Solution:** I interpretted these omissions as evidence of non-occurrence, since they were uncommon events; I filled these with 0 (for number of occurences) or the max value (for amount of time since last occurence).
 
 * **Problem 3:** There were many features that were highly correlated or nearly identical, as well as many categorical features.  
 -**Solution:** I was able to remove many features that didn't add any predictive value, and I applied one-hot encoding to the categories.
