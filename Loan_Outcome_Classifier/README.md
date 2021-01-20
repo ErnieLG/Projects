@@ -23,8 +23,8 @@ Lending Club utilizes a loan risk rating system from A to G, with A having the g
 * **Problem 1:** This dataset contains completely different features depending on whether the loan applicants were an individual person or multiple people.  
  **Solution:** These are essentially two datasets with data that can't be compared to each other, therefore we'll focus only on individual applicants.
 
-* **Problem 1:** This dataset contains completely different features depending on whether the loan applicants were an individual person or multiple people.  
- **Solution:** These are essentially two datasets with data that can't be compared to each other, therefore we'll focus only on individual applicants.
+* **Problem 1:** There are null values for features that describe the number of times an event happened (such as "Number of credit inquiries in past 12 months") or amount of time since a specific event occurred (such as "Months since most recent 90-day or worse rating").
+ **Solution:** I interpretted these omissions as evidence of non-occurrence, since they were uncommon events; I filled these with 0 (for number of occurences) or the max value (for amount of time since last occurence).
  
 * **Problem 2:** There are null values for features that describe the number of times an event happened (such as "Number of credit inquiries in past 12 months") or amount of time since a specific event occurred (such as "Months since most recent 90-day or worse rating").
  **Solution:** I interpretted these omissions as evidence of non-occurrence, since they were uncommon events; I filled these with 0 (for number of occurences) or the max value (for amount of time since last occurence).
@@ -51,24 +51,29 @@ amount of loan  | amount of monthly payments | .954
 months since oldest revolving account opened  | years between opening of first line of credit and loan issuance | .918
 number of revolving accounts  | number of bankcard accounts | .838
 
-* Being full paid off is most correlated with an A or B grade and FICO score, while an A grade is most correlated with FICO score and a high credit limit:
+* Being fully paid off is most correlated with an A or B grade and FICO score, while an A grade is most correlated with FICO score and a high credit limit:
 ![](./6._Readme/fully_paid_corr.png)![](./6._Readme/grade_A_corr.png)
+
+* Being charged off is most correlated with interest rate, term length, and an E or D grade, while a G grade is most correlated interest rate, term length, and amount of monthly payments:
+![](./6._Readme/charged_off_corr.png)![](./6._Readme/grade_G_corr.png)
+
 
 ## 4. Machine Learning & Modeling
 
 [ML Report](./4.%20Modeling/Modeling.ipynb)
 
-The most important metric to maximize is the true positive rate; it's uncommon for loans to be charged-off, but they represent a loss in profit, and we want to limit them as much as possible.  After attempting several models such as KNN, Random Forest, and Gradient Boosting, I was not getting TPRs much better than chance.  This led to me applying Bayesian Boosting to Light GBM, optimizing the hyperparameters in order to maximize the AUROC.  Comparing the various methods of LightGBM, xxx had the best preliminary results.  I performed it for 5 total iterations with CV = 5.  
+The most important metric to maximize is the true positive rate; it's uncommon for loans to be charged-off, but they represent a loss in profit, and we want to limit them as much as possible.  After attempting several models such as KNN, Random Forest, and Gradient Boosting, I was not getting TPRs much better than chance.  This led to me applying Bayesian Boosting to Light GBM, optimizing the hyperparameters in order to maximize the AUROC.  Comparing the various methods of LightGBM, Goss had the best preliminary results at 72.4%.  I performed it again for a total of 6 iterations with CV = 5.  
 
-![](./6_README_files/algo.png)
+ROC Plot:
+![](./6._Readme/roc_plot.png)
 
 Adjusting the threshold to .40 allowed us to reach TPR = xx%.
 
-![](./6_README_files/forumla.png)
+![](./6._Readme/fully_paid_corr.png)
 
 Adjusting the threshold to .33 allowed us to reach TPR = 90%.
 
-![](./6_README_files/forumla.png)
+![](./6._Readme/fully_paid_corr.png)
 
 
 ## 5. Future Improvements
