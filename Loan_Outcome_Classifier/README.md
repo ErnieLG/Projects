@@ -54,6 +54,7 @@ number of revolving accounts  | number of bankcard accounts | .838
 ![](./6.%20Readme/fully_paid_corr.png)![](./6.%20Readme/grade_A_corr.png)
 
 * Being charged off is most correlated with interest rate, term length, and an E or D grade, while a G grade is most correlated interest rate, term length, and amount of monthly payments:
+
 ![](./6.%20Readme/charged_off_corr.png)![](./6.%20Readme/grade_G_corr.png)
 
 
@@ -67,13 +68,13 @@ ROC Plot:
 
 ![](./6.%20Readme/roc_plot.png)
 
-Adjusting the threshold to .40 allowed us to reach TPR = xx%.
+Adjusting the threshold to .4 allowed us to reach TPR = xx%.
 
-![](./6.%20Readme/fully_paid_corr.png)
+![](./6.%20Readme/conf_matrix0.png)
 
-Adjusting the threshold to .33 allowed us to reach TPR = 90%.
+Adjusting the threshold to .3 allowed us to reach TPR = xx%.
 
-![](./6.%20Readme/fully_paid_corr.png)
+![](./6.%20Readme/conf_matrix1.png)
 
 
 ## 5. Future Improvements
