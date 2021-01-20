@@ -68,18 +68,18 @@ ROC Plot:
 
 ![](./6.%20Readme/roc_plot.png)
 
-Adjusting the threshold to .4 allowed us to reach TPR = xx%.
+Adjusting the threshold to .5 allowed us to reach TPR = 68%.
 
 ![](./6.%20Readme/conf_matrix0.png)
 
-Adjusting the threshold to .3 allowed us to reach TPR = xx%.
+Adjusting the threshold to .4 allowed us to reach TPR = 83%.
 
 ![](./6.%20Readme/conf_matrix1.png)
 
 
 ## 5. Future Improvements
 
-[Slide Deck](./6.%20Readme/slide_deck.pdf)
+[Slide Deck](./5.%20Presentation/slide_deck.pdf)
 
 * In the future, I would like to analyze the data for loan applicants that were filed by more than one person.
 
