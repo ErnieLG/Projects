@@ -38,8 +38,8 @@ Lending Club utilizes a loan risk rating system from A to G, with A having the g
 [EDA Report](./3.%20EDA/EDA.ipynb)
 
 * LendingClub's grades aligned well with the charged off rates:
-![](./6._Readme/outcome_by_grade.png)
-![](./6._Readme/outcome_by_grade_table.png)
+![](./6.%20Readme/outcome_by_grade.png)
+![](./6.%20Readme/outcome_by_grade_table.png)
 
 * There were a few strong correlations between features that were mostly expected:
 
@@ -52,10 +52,10 @@ months since oldest revolving account opened  | years between opening of first l
 number of revolving accounts  | number of bankcard accounts | .838
 
 * Being fully paid off is most correlated with an A or B grade and FICO score, while an A grade is most correlated with FICO score and a high credit limit:
-![](./6._Readme/fully_paid_corr.png)![](./6._Readme/grade_A_corr.png)
+![](./6.%20Readme/fully_paid_corr.png)![](./6.%20Readme/grade_A_corr.png)
 
 * Being charged off is most correlated with interest rate, term length, and an E or D grade, while a G grade is most correlated interest rate, term length, and amount of monthly payments:
-![](./6._Readme/charged_off_corr.png)![](./6._Readme/grade_G_corr.png)
+![](./6.%20Readme/charged_off_corr.png)![](./6.%20Readme/grade_G_corr.png)
 
 
 ## 4. Machine Learning & Modeling
@@ -65,15 +65,15 @@ number of revolving accounts  | number of bankcard accounts | .838
 The most important metric to maximize is the true positive rate; it's uncommon for loans to be charged-off, but they represent a loss in profit, and we want to limit them as much as possible.  After attempting several models such as KNN, Random Forest, and Gradient Boosting, I was not getting TPRs much better than chance.  This led to me applying Bayesian Boosting to Light GBM, optimizing the hyperparameters in order to maximize the AUROC.  Comparing the various methods of LightGBM, Goss had the best preliminary results at 72.4%.  I performed it again for a total of 6 iterations with CV = 5.  
 
 ROC Plot:
-![](./6._Readme/roc_plot.png)
+![](./6.%20Readme/roc_plot.png)
 
 Adjusting the threshold to .40 allowed us to reach TPR = xx%.
 
-![](./6._Readme/fully_paid_corr.png)
+![](./6.%20Readme/fully_paid_corr.png)
 
 Adjusting the threshold to .33 allowed us to reach TPR = 90%.
 
-![](./6._Readme/fully_paid_corr.png)
+![](./6.%20Readme/fully_paid_corr.png)
 
 
 ## 5. Future Improvements
