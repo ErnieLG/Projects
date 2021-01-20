@@ -13,7 +13,7 @@ I'm using data provided by NathanGeorge on 1.3M observations of Lending Club (ht
 
 Lending Club utilizes a loan risk rating system from A to G, with A having the greatest chance of being paid back in full and also having the lowest interest rate:
 
-![Image of Grades](https://www.moneycrashers.com/wp-content/uploads/2015/04/reward-risk.png width="700")
+<img src="https://www.moneycrashers.com/wp-content/uploads/2015/04/reward-risk.png" width="700")
 
 
 ## 2. Data Cleaning 
@@ -81,7 +81,7 @@ Adjusting the threshold to .3 allowed us to reach TPR = xx%.
 
 * In the future, I would like to analyze the data for loan applicants that were filed by more than one person.
 
-* It would be interesting to try different types of hyper-parameters and Bayesian Boosting, but I was limited by the size and processing time of the data.
+* It would be interesting to try different types of hyper-parameters and more iterations of Bayesian Boosting.
 
 
 ## 6. Credits
