@@ -60,7 +60,7 @@ number of revolving accounts  | number of bankcard accounts | .838
 
 ## 4. Machine Learning & Modeling
 
-
+[Modeling Report](./4.%20Modeling/Modeling.ipynb)
 
 The most important metric to maximize is the true positive rate; it's uncommon for loans to be charged-off, but they represent a loss in profit, and we want to limit them as much as possible.  After attempting several models such as KNN, Random Forest, and Gradient Boosting, I was not getting TPRs much better than chance.  This led to me applying Bayesian Boosting to Light GBM, optimizing the hyperparameters in order to maximize the AUROC.  Comparing the various methods of LightGBM, Goss had the best preliminary results at 72.4%.  I performed it again for a total of 6 iterations with CV = 5.  
 
