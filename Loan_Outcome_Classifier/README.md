@@ -68,13 +68,13 @@ ROC Plot:
 
 ![](./6.%20Readme/roc_plot.png)
 
-Adjusting the threshold to .5 allowed us to reach TPR = 68%.
-
-![](./6.%20Readme/conf_matrix0.png)
-
-Adjusting the threshold to .4 allowed us to reach TPR = 83%.
+Adjusting the threshold to .65 maximized our total profit:
 
 ![](./6.%20Readme/conf_matrix1.png)
+
+Assuming half of the principal is charged off for unpaid loans, we are able to improve profit per loan by 38.55% and improve net profits by 12.19%.  Lower thresholds continue to improve the profit per loan by being overly careful to not mis-classify any loans as charge-offs:
+
+![](./6.%20Readme/threshold_table.png)
 
 
 ## 5. Future Improvements
@@ -83,7 +83,9 @@ Adjusting the threshold to .4 allowed us to reach TPR = 83%.
 
 * In the future, I would like to analyze the data for loan applicants that were filed by more than one person.
 
-* It would be interesting to try different types of hyper-parameters and more iterations of Bayesian Boosting.
+* The data of the loan applicants who were denied would presumably reveal many worthy applicants with our improved model.
+
+* It would be interesting to try different types of hyper-parameters and more iterations of Bayesian Boosting to further improve our model.
 
 
 ## 6. Credits
