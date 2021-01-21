@@ -81,11 +81,13 @@ Assuming half of the principal is charged off for unpaid loans, we are able to i
 
 [Slide Deck](./5.%20Presentation/slide_deck.pdf)
 
+* I'd like to explore the relationship between interest rates and charge-off rates.  High interest rates are one of the best predictors of a loan being charged off, but these are assigned by the loan issuers.  Could you find an ideal interest rate that would minimize risk/maximize profit?
+
 * In the future, I would like to analyze the data for loan applicants that were filed by more than one person.
 
 * The data of the loan applicants who were denied would presumably reveal many worthy applicants with our improved model.
 
-* It would be interesting to try different types of hyper-parameters and more iterations of Bayesian Boosting to further improve our model.
+* It would be interesting to try further models and more iterations of Bayesian Boosting to further improve our model.
 
 
 ## 6. Credits
